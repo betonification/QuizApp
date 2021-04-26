@@ -58,7 +58,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         mSubmittedAnswer = false
         mSelectedAnswer = false
 
-        if(mCurrentPosition == mQuestionsList!!.size){
+        if(mCurrentPosition - 1 == mQuestionsList!!.size){
             btnSubmit.text = "FINISH"
         }else{
             btnSubmit.text = "SUBMIT"
@@ -132,13 +132,11 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                         mNumberOfCorrectAnswers--
                     }
                     answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
-
-                    if(mCurrentPosition == mQuestionsList!!.size){
+                    mCurrentPosition++
+                    if(mCurrentPosition - 1 == mQuestionsList!!.size){
                         btnSubmit.text = "FINISH"
-                        mCurrentPosition++
                     }else{
                         btnSubmit.text = "GO TO NEXT QUESTION"
-                        mCurrentPosition++
                     }
                     mSubmittedAnswer = true
                     mSelectedOptionPosition = 0
