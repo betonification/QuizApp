@@ -1,2 +1,2 @@
 # QuizApp
-Quiz App I've been working on. Still in progress
+Old version of FunQuizApp
